@@ -13,9 +13,14 @@ tasks:
       - uv sync --dev
 
   dev:
-    desc: "Run with hot reload"
+    desc: "Run the streamable-HTTP transport with hot reload"
     cmds:
-      - uv run uvicorn src.mcp_server.main:app --reload --port 8007
+      - uv run uvicorn mcp_server.main:app --reload --port 8007 --app-dir src
+
+  dev:stdio:
+    desc: "Run the stdio transport (Claude Desktop/Code)"
+    cmds:
+      - uv run python -m mcp_server
 
   lint:
     desc: "Run linters"
