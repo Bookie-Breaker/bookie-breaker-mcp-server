@@ -1,11 +1,18 @@
 [project]
+dependencies = [
+  "fastmcp>=2.10",
+  "httpx>=0.28",
+  "pydantic>=2.9",
+  "pydantic-settings>=2.6",
+  "uvicorn[standard]>=0.34",
+]
 description = "MCP tool server exposing BookieBreaker as Claude tools"
 name = "mcp-server"
 requires-python = ">=3.12"
 version = "0.1.0"
 
 [dependency-groups]
-dev = ["ruff", "mypy", "pytest", "pytest-cov", "pip-audit"]
+dev = ["ruff", "mypy", "pytest", "pytest-asyncio", "pytest-cov", "pip-audit", "respx"]
 
 [tool.ruff]
 line-length = 120
@@ -21,5 +28,9 @@ warn_return_any = true
 warn_unused_configs = true
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+# function scope keeps async fixtures (in-memory MCP client) on the same
+# loop as the tests; a session fixture loop deadlocks cross-loop awaits
+asyncio_default_fixture_loop_scope = "function"
+asyncio_mode = "auto"
+pythonpath = ["src", "."]
 testpaths = ["tests"]
