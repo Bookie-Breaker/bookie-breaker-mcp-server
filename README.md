@@ -3,6 +3,10 @@
 MCP tool server exposing BookieBreaker capabilities as Claude tools. A stateless REST-to-MCP bridge over the
 agent, lines-service, statistics-service, simulation-engine, prediction-engine, and bookie-emulator.
 
+For hooking this server up to Claude (§7) and the limits of MCP tool coverage (§4), see the operator playbooks
+[01-installation](https://github.com/Bookie-Breaker/bookie-breaker-docs/blob/main/playbooks/01-installation.md)
+and [04-parlays-props-and-live](https://github.com/Bookie-Breaker/bookie-breaker-docs/blob/main/playbooks/04-parlays-props-and-live.md).
+
 ## Tools
 
 `get_edges`, `get_edge_detail`, `get_slate`, `get_prediction`, `get_lines`, `place_bet`, `get_bet_history`,
