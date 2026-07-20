@@ -1,5 +1,12 @@
 # bookie-breaker-mcp-server
 
+[![CI](https://img.shields.io/github/actions/workflow/status/Bookie-Breaker/bookie-breaker-mcp-server/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white)](https://github.com/Bookie-Breaker/bookie-breaker-mcp-server/actions/workflows/ci.yml)
+[![coverage](https://img.shields.io/codecov/c/github/Bookie-Breaker/bookie-breaker-mcp-server?logo=codecov&logoColor=white)](https://app.codecov.io/gh/Bookie-Breaker/bookie-breaker-mcp-server)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![FastMCP](https://img.shields.io/badge/FastMCP-2.10-0EA5E9)
+![MCP](https://img.shields.io/badge/MCP-tools-000000?logo=modelcontextprotocol&logoColor=white)
+![uv](https://img.shields.io/badge/uv-managed-DE5FE9?logo=uv&logoColor=white)
+
 MCP tool server exposing BookieBreaker capabilities as Claude tools. A stateless REST-to-MCP bridge over the
 agent, lines-service, statistics-service, simulation-engine, prediction-engine, and bookie-emulator.
 
